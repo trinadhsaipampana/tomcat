@@ -1,0 +1,7 @@
+Download tomcat 7.0.106 tar.gz from offical website https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.106/bin/ in /opt directory
+
+After downloading, navigate to /opt/apache-tomcat-7.0.106/bin and execute the following commands to start/stop the tomcat:
+sh startup.sh
+sh shutdown.sh
+
+Once tomcat is running, access the tomcat from browser with IP:8080
