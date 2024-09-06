@@ -1,0 +1,23 @@
+Manually stop the running tomcat by executing following command if it is running:
+sh shutdown.sh
+
+Now create a file in /etc/systemd/system as tomcat.service with following content:
+[Unit]
+Description=tomcat service
+After=network.target
+[Service]
+Type=forking
+User=root
+Group=root
+ExecStart=/opt/apache-tomcat-7.0.106/bin/startup.sh
+ExecStop=/opt/apache-tomcat-7.0.106/bin/shutdown.sh
+[Install]
+WantedBy=multi-user.target
+
+After creating the file execute the follwoing commands:
+chmod 777 /etc/systemd/system/tomcat.service
+systemctl daemon-reload
+systemclt enable tomcat.service
+systemctl status tomcat.service
+systemctl stop tomcat.service
+systemctl start tomcat.service
