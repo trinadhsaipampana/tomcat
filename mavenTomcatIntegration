@@ -1,0 +1,23 @@
+To integrate the tomcat with maven we need to update the /opt/apache-maven-3.9.9/conf/settings.xml and pom.xml files as follows:
+
+Edit the /opt/apache-maven-3.9.9/conf/settings.xml with following data under <servers> tag as follows:
+<server>
+	<id>TomcatServer</id>
+  <username>admin</username>
+  <password>3N@dh$aipampana</password>
+</server>
+
+Edit the pom.xml file as follows:
+
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId> 
+  <version>2.2</version>
+    <configuration>
+      <url>http://192.168.64.6:8080/manager/text</url> 
+      <server>TomcatServer</server>  
+      <path>/opt/Trinadh-Web-Page/web-page/target</path> 
+      <username>admin</username> 
+      <password>3N@dh$aipampana</password>  
+   </configuration>
+</plugin>
