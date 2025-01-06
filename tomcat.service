@@ -15,8 +15,6 @@ ExecStop=/opt/apache-tomcat-7.0.106/bin/shutdown.sh
 WantedBy=multi-user.target
 
 After creating the file execute the follwoing commands:
-chmod 777 /etc/systemd/system/tomcat.service
-systemctl daemon-reload
 systemclt enable tomcat.service
 systemctl status tomcat.service
 systemctl stop tomcat.service
